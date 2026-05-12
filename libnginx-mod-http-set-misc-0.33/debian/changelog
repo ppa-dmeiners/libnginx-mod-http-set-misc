@@ -1,0 +1,87 @@
+libnginx-mod-http-set-misc (1:0.33-7+ubuntu24.04.1+deb.meiners.net+1.28.3) noble; urgency=medium
+
+  * Backport to noble from resolute
+
+ -- David Meiners <david@meiners.net>  Thu, 07 May 2026 17:51:46 +0000
+
+libnginx-mod-http-set-misc (0.33-7build3) resolute; urgency=medium
+
+  * Rebuild against new nginx-abi-1.28.3-1.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 31 Mar 2026 20:30:34 +0200
+
+libnginx-mod-http-set-misc (0.33-7build2) resolute; urgency=medium
+
+  * Rebuild against new nginx-abi-1.28.2.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 17 Feb 2026 22:02:58 +0100
+
+libnginx-mod-http-set-misc (0.33-7build1) resolute; urgency=medium
+
+  * Rebuild against new nginx 1.28.1.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Mon, 29 Dec 2025 14:16:36 +0100
+
+libnginx-mod-http-set-misc (0.33-7) unstable; urgency=medium
+
+  * Team upload.
+  * d/watch: rewrite to version 5, use Github uscan-template
+  * d/gbp.conf: dist = DEP14, debian-branch = debian/latest
+  * d/gbp.conf: upstream-branch = upstream/latest
+  * d/control: remove Rules-Requires-Root: no
+
+ -- Jan Mojžíš <janmojzis@debian.org>  Sat, 20 Sep 2025 18:07:25 +0200
+
+libnginx-mod-http-set-misc (0.33-6) unstable; urgency=medium
+
+  * Team upload.
+  * d/control: bump Standards-Version: 4.7.2, no changes
+  * d/watch: use more generic template
+  * d/copyright: bump debian/* copyright year
+
+ -- Jan Mojžíš <janmojzis@debian.org>  Sat, 12 Apr 2025 09:05:50 +0200
+
+libnginx-mod-http-set-misc (0.33-5) unstable; urgency=medium
+
+  * Team upload.
+  * Better usage of dh-sequence-nginx.
+    * d/control: remove Build-Depends nginx-abi-1.24.0-1
+    * d/rules: remove override_dh_auto_test, override_dh_auto_test
+    * d/control: remove Depends libnginx-mod-http-ndk
+  * d/copyright-scan-patterns.yml add
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Sun, 08 Oct 2023 17:10:26 +0200
+
+libnginx-mod-http-set-misc (0.33-4) unstable; urgency=medium
+
+  * Team upload.
+  * NEW ABI: rebuild with nginx-abi-1.24.0-1
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Wed, 28 Jun 2023 00:01:59 +0200
+
+libnginx-mod-http-set-misc (0.33-3) unstable; urgency=medium
+
+  * Team upload.
+  * d/t/set_if_empty renamed to d/t/setifempty, fixes lintian
+    warning illegal-runtime-test-name
+  * d/t/generic rework. The test now checks module after
+    installation/reload/restart.
+  * d/control: bump Standards-Version: 4.6.2, no changes
+  * d/copyright: reformat text to be compatible with 'cme update dpkg-copyright'
+  * d/fix.scanned.copyright: added, fixes upstream author name parsing
+  * NEW ABI: rebuild with nginx-abi-1.22.1-7
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Mon, 13 Feb 2023 12:56:37 +0100
+
+libnginx-mod-http-set-misc (0.33-2) unstable; urgency=medium
+
+  * Team upload.
+  * d/control: fixed dependency libnginx-mod-http-ndk-dev (>= 1:0.3.2-2)
+
+ -- Jan Mojžíš <jan.mojzis@gmail.com>  Fri, 09 Dec 2022 14:08:01 +0100
+
+libnginx-mod-http-set-misc (0.33-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1025291)
+
+ -- Jérémy Lal <kapouer@melix.org>  Fri, 02 Dec 2022 00:32:56 +0100

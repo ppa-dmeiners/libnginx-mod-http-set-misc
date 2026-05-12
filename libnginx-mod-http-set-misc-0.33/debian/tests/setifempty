@@ -1,0 +1,36 @@
+#!/bin/sh
+set -e
+
+cat <<EOF > "/etc/nginx/sites-enabled/default"
+server {
+  listen 80 default_server;
+
+  location /setifempty {
+    set_if_empty \$var aaa;
+    set_if_empty \$var bbb;
+    if (\$var = aaa ) {
+      return 200;
+    }
+    return 500;
+  }
+}
+EOF
+
+exp="response_code: 200"
+
+nginx -t
+invoke-rc.d nginx restart || { journalctl -n all -xu nginx.service; exit 1; }
+
+out=`curl --fail -w "response_code: %{http_code}\n" http://127.0.0.1/setifempty`
+
+if [ x"${out}" != x"${exp}" ]; then
+  echo "output:"
+  echo "====================="
+  echo "${out}"
+  echo "====================="
+  echo "expected output:"
+  echo "====================="
+  echo "${exp}"
+  echo "====================="
+  exit 1
+fi

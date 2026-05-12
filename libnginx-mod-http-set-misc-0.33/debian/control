@@ -1,0 +1,26 @@
+Source: libnginx-mod-http-set-misc
+Section: httpd
+Priority: optional
+Maintainer: Debian Nginx Maintainers <pkg-nginx-maintainers@alioth-lists.debian.net>
+Uploaders: Jérémy Lal <kapouer@melix.org>,
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-nginx,
+               libnginx-mod-http-ndk-dev (>= 1:0.3.2-2),
+Standards-Version: 4.7.2
+Homepage: https://github.com/openresty/set-misc-nginx-module
+Vcs-Git: https://salsa.debian.org/nginx-team/libnginx-mod-http-set-misc.git
+Vcs-Browser: https://salsa.debian.org/nginx-team/libnginx-mod-http-set-misc
+
+Package: libnginx-mod-http-set-misc
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Recommends: nginx,
+Description: Extended rewrite directives module for Nginx
+ This module provides more directives that can be used in
+ the Nginx rewrite phase, like the 'set' directive.
+  - URI escaping and unescaping
+  - JSON quoting
+  - digests encoding and decoding
+  - random number generator
